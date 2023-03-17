@@ -1,6 +1,6 @@
 body {
   font-size: 18px;
-  background-color: #f1f1f1;
+  background-color: #3a0d0d;
 }
 .container-xxl {
   width: 100%;
@@ -8,6 +8,22 @@ body {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+.header {
+  color: white;
+  align-items: center;
+  display: flex;
+  height: 15%;
+}
+.logoimg {
+  border-radius: 50%;
+  width: 50px;
+}
+.bgimg {
+  width: 100%;
+  border-radius: 20px;
+  max-height: 300px;
+  object-fit: cover;
 }
 .ourbrand {
   border: 1px solid#d8d8d8;
