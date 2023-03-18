@@ -4,10 +4,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ton-connect</title>
+    <link rel="icon" type="image/jpg" href="/images/contributiondao.jpg">
     <%- include('head') %>
 </head>
 <body>
-    <div class="container-xxl">
+    <div class="container-fluid px-0 header">
+        <div class="container-xxl py-2">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="/">
+                    <image class="logoimg" src="/images/contributiondao.jpg"></image>
+                    <span style="margin-left: 15px;">Test Ton SBT Gate</span>
+                </a>
+                <div>
+                    <button class="connectbtn mx-1">Connect Wallet</button>
+                    <button class="connectbtn mx-1">New Telegram Group</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-xxl body-container">
         <%- include('./'+(typeof views!='undefined'?views:'home')); %>
     </div>
 </body>

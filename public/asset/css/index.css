@@ -1,6 +1,6 @@
 body {
   font-size: 18px;
-  background-color: #3a0d0d;
+  background-color: #8ecae6;
 }
 .container-xxl {
   width: 100%;
@@ -9,11 +9,21 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
+.body-container {
+  background-color: #8ecae6;
+}
 .header {
-  color: white;
-  align-items: center;
-  display: flex;
-  height: 15%;
+  color: white !important;
+  background-color: #023047;
+  /* position: sticky;
+  top: 0;
+  z-index: 1020; */
+}
+.header span {
+  color: white !important;
+}
+a {
+  text-decoration: none;
 }
 .logoimg {
   border-radius: 50%;
@@ -31,18 +41,16 @@ body {
   background-color: black;
   color: white;
 }
-.signin {
-  text-align: right;
-}
 button {
   border: none;
 }
-.signin button {
-  background-color: #5244ff;
-  color: white;
-  border-radius: 10px;
-  padding: 8px 35px;
-  font-size: 20px;
+.connectbtn {
+  background-color: #8ecae6;
+  color: black;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 18px;
+  float: right;
 }
 .eachgroup {
   background-color: #ffffff;
@@ -67,8 +75,8 @@ button {
   object-fit: cover;
 }
 .reviewbtn {
-  border: 1px solid #5244ff;
-  color: #5244ff;
+  border: 1px solid #023047;
+  color: #023047;
   border-radius: 10px;
   font-size: 18px;
   padding: 10px;
@@ -88,10 +96,10 @@ button {
   border-radius: 5px;
 }
 .maintab .nav-tabs .nav-link:hover {
-  border: 1px solid #5244ff;
+  border: 1px solid #023047;
 }
 .maintab .nav-link.active {
-  background-color: #5244ff;
+  background-color: #023047;
   color: #fff !important;
 }
 .maintab .nav-link.active:hover {
@@ -101,7 +109,7 @@ button {
   height: 200px;
 }
 .joinbtn {
-  background-color: #5244ff;
+  background-color: #023047;
   color: white;
   border-radius: 10px;
   padding: 10px 20px;
@@ -114,7 +122,7 @@ button {
   border-radius: 5px;
 }
 .goto {
-  background-color: #5244ff;
+  background-color: #023047;
   color: white;
   border-radius: 10px;
   padding: 5px 10px;
