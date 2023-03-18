@@ -52,6 +52,13 @@ button {
   font-size: 18px;
   float: right;
 }
+.btn-ok {
+  background-color: #8ecae6;
+  color: black;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 18px;
+}
 .eachgroup {
   background-color: #ffffff;
   border: 1px solid#d8d8d8;
@@ -126,6 +133,31 @@ button {
   color: white;
   border-radius: 10px;
   padding: 5px 10px;
+}
+.newtggroupform .form-control {
+  padding-left: 5px;
+  padding-right: 0px;
+  border: 1px solid #cccccc;
+  box-shadow: none;
+  border-radius: 5px;
+  font-weight: bolder;
+  background-color: white;
+  height: 2em;
+}
+.newtggroupform input[type="text"] {
+  padding: 0.5em;
+  resize: none;
+  outline: none;
+}
+.newtggroupform .form-group {
+  margin-bottom: 0.8em;
+  position: relative;
+}
+.newtggroupform label {
+  font-size: 16px;
+}
+.color-primary-red {
+  color: red;
 }
 .bg-white {
   background-color: #ffffff;

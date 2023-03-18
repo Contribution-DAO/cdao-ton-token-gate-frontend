@@ -7,7 +7,60 @@
     <link rel="icon" type="image/jpg" href="/images/contributiondao.jpg">
     <%- include('head') %>
 </head>
+    <script>
+        $(document).ready(async function () {
+            $(".newtggroup").click(function(){
+                $("#newtggroupmodal").modal("show");
+            })
+            $(".btnjoinnew").click(function() {
+                let thisaddrform = $(this).closest(".newtggroupform");
+                checkreqfill(thisaddrform,function(isok,thisclass){
+                if(!isok){
+                    erroralrt(`Please fill ${$(thisclass).attr("fillname")}`, thisclass);
+                    return;
+                }
+                else{
+                    let id = thisaddrform.find('[name="tggroupid"]').val();
+                    let inviteLink = thisaddrform.find('[name="invitelink"]').val();
+                    let twitterUsername = thisaddrform.find('[name="username"]').val();
+                    fetch(`/grouplink`,{
+                        method: 'POST',
+                        headers: {
+                            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoiMDpkNGEwODQyYTFkMjVjODRiMDE1Yjc4YzYxNDZkMzAxMjMwYzJlODBkOWEzNDZlMWM5NDdmOTlmZWZlZWRjNTM4IiwiZXhwIjoxOTk0MjE4MDY1fQ.RRg1NNS0VsF8K5nX_wSXrXeE6xtplmQ54aXpDXp5rWw",
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({id,inviteLink,twitterUsername})
+                    })
+                    .then(response => response.json())
+                    .then(jsn => {
+                        if (jsn.error) {
+                          alert(jsn.msg);
+                        } else {
+                            alert("success");
+                        }
+                    })
+                    .catch(error => {
+                        alert(error)
+                    });
+                }
+            });
+        })
+        function checkreqfill(thisform,cb){
+            let countclass = 1;
+            $(thisform).find(".reqfill").each(function(index){
+                if (!$(this).val() || $(this).val().trim() == 0){
+                    return cb(false,this);
+                }
+                if(countclass == $(thisform).find(".reqfill").length){
+                    return cb(true,this);
+                }
+                countclass++;
+            });
+        }
+    });
+    </script>
 <body>
+    <%- include('./modal/newgroup'); %>
     <div class="container-fluid px-0 header">
         <div class="container-xxl py-2">
             <div class="d-flex justify-content-between align-items-center">
@@ -16,8 +69,10 @@
                     <span style="margin-left: 15px;">Test Ton SBT Gate</span>
                 </a>
                 <div>
-                    <button class="connectbtn mx-1">Connect Wallet</button>
-                    <button class="connectbtn mx-1">New Telegram Group</button>
+                    <a href="https://ton-connect.contributiondao.com/connect/">
+                        <button class="connectbtn mx-1">Connect Wallet</button>
+                    </a>
+                    <button class="newtggroup connectbtn mx-1">New Telegram Group</button>
                 </div>
             </div>
         </div>
