@@ -61,7 +61,11 @@ router.post("/grouplink", function (req, res, next) {
       json: senddata,
     };
     request(options, (req, ress) => {
-      let data = ress.body ? ress.body : null;
+      let data = ress.body
+        ? { ...ress.body, statusCode: ress.statusCode }
+        : ress.statusCode
+        ? { statusCode: ress.statusCode }
+        : null;
       res.status(200).send({ error: false, data });
     });
   }
